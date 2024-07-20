@@ -1,0 +1,63 @@
+$primary-gradient: linear-gradient(102deg, #E55250, #FFC7A0 124.4%);
+$primary-red: #FD5351;
+$primary-peach: #FFC7A0;
+$primary-black: #212121;
+$primary-white: #FFFFFF;
+
+$secondary-peach: #FFC7A0;
+$secondary-beige: #C9AC83;
+
+$text-dark-gray: #868686;
+$text-gray: #929292;
+$text-light-gray: #F5EFE2; 
+$text-white: #FFFFFF;
+
+.primary-gradient {
+    background: $primary-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.primary-red {
+    color: $primary-red;
+}
+
+.primary-peach {
+    color: $primary-peach;
+}
+
+.primary-black {
+    color: $primary-black;
+}
+
+.primary-white {
+    color: $primary-white;
+}
+
+.secondary-peach {
+    color: $secondary-peach;
+}
+
+.secondary-beige {
+    color: $secondary-beige;
+}
+
+.text-gray {
+    color: $text-gray;
+}
+
+.text-dark-gray {
+    color: $text-dark-gray;
+}
+
+.text-light-gray {
+    color: $text-light-gray;
+}
+
+.text-white {
+    color: $text-white;
+}
+
+.bg-peach {
+    background-color: $primary-peach
+}

@@ -1,0 +1,75 @@
+// src/assets/styles/utilities.scss
+
+// Define spacing scale
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  auto:auto
+);
+
+// Generate margin utilities
+@mixin generate-margin-utilities {
+  @each $key, $value in $spacers {
+    .m-#{$key} {
+      margin: $value !important;
+    }
+    .mt-#{$key} {
+      margin-top: $value !important;
+    }
+    .me-#{$key} {
+      margin-right: $value !important;
+    }
+    .mb-#{$key} {
+      margin-bottom: $value !important;
+    }
+    .ms-#{$key} {
+      margin-left: $value !important;
+    }
+    .mx-#{$key} {
+      margin-left: $value !important;
+      margin-right: $value !important;
+    }
+    .my-#{$key} {
+      margin-top: $value !important;
+      margin-bottom: $value !important;
+    }
+  }
+}
+
+// Generate padding utilities
+@mixin generate-padding-utilities {
+  @each $key, $value in $spacers {
+    .p-#{$key} {
+      padding: $value !important;
+    }
+    .pt-#{$key} {
+      padding-top: $value !important;
+    }
+    .pe-#{$key} {
+      padding-right: $value !important;
+    }
+    .pb-#{$key} {
+      padding-bottom: $value !important;
+    }
+    .ps-#{$key} {
+      padding-left: $value !important;
+    }
+    .px-#{$key} {
+      padding-left: $value !important;
+      padding-right: $value !important;
+    }
+    .py-#{$key} {
+      padding-top: $value !important;
+      padding-bottom: $value !important;
+    }
+  }
+}
+
+// Generate utilities
+@include generate-margin-utilities();
+@include generate-padding-utilities();
