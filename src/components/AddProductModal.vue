@@ -189,6 +189,7 @@ watch(price, validatePrice);
     @media (max-width: 768px) {
         .modal {
             width: calc(100% - 2rem); 
+            max-width: 100vw;
         }
     } 
 </style>

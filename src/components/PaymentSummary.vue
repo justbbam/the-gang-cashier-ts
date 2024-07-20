@@ -145,6 +145,7 @@ label {
 }
 
 .receive-btn {
+  color: #000;
   background-color: #ffc7a0;
   padding: 0.25rem 0.75rem;
   border-radius: 0.5rem;
