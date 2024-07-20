@@ -40,17 +40,17 @@ import { ref, watch } from 'vue';
 import { useProductStore } from '../stores/productStore';
 
 const props = defineProps({
-  modelValue: {
-    type: Boolean,
-    required: true
-  }
+    modelValue: {
+        type: Boolean,
+        required: true
+    }
 });
 
 const emits = defineEmits(['update:modelValue']);
 
 const productName = ref('');
 const description = ref('');
-const price = ref<number | null>(null); 
+const price = ref<number | null>(null);
 const errors = ref<{ productName?: string, description?: string, price?: string }>({});
 
 const productStore = useProductStore();
@@ -108,88 +108,95 @@ watch(price, validatePrice);
 </script>
 
 <style scoped>
-    label {
-        color: #fff;
-        margin-bottom: 0.25rem;
-    }
+label {
+    color: #fff;
+    margin-bottom: 0.25rem;
+}
 
-    input,
-    textarea {
-        padding: 10px;
-        border: 1px solid #373737;
-        border-radius: 5px;
-        background: #101010;
-        color: #fff;
-        font-size: 1rem;
-    }
+input,
+textarea {
+    padding: 10px;
+    border: 1px solid #373737;
+    border-radius: 5px;
+    background: #101010;
+    color: #fff;
+    font-size: 1rem;
+}
 
-    .modal-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.5);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 1000;
-    }
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
 
+.modal {
+    background: #333;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    max-width: 20vw;
+    margin: 0 1rem;
+}
+
+.modal-header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-footer {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.btn-secondary {
+    background: rgba(0, 0, 0, 0);
+    color: #fff;
+    border: #fff 1px solid;
+    padding: 0.65rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    width: 50%;
+}
+
+.btn-primary {
+    color: #000;
+    border: none;
+    padding: 0.65rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    width: 50%;
+}
+
+@media all and (max-width: 767.9px) {
     .modal {
-        background: #333;
-        padding: 1.5rem;
-        border-radius: 0.5rem;
-        width: 100%;
-        max-width: 20vw;
-        margin: 0 1rem;
+        width: calc(100% - 2rem);
+        max-width: 100vw;
     }
+}
 
-    .modal-header {
-        margin-bottom: 20px;
-        text-align: center;
+@media all and (min-width: 768px) and (max-width: 991.9px) {
+    .modal {
+        width: calc(100% - 2rem);
+        max-width: 50vw;
     }
-
-    .modal-body {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .form-group {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .modal-footer {
-        display: flex;
-        gap: 0.75rem;
-        margin-top: 1rem;
-    }
-
-    .btn-secondary {
-        background: rgba(0, 0, 0, 0);
-        color: #fff;
-        border: #fff 1px solid;
-        padding: 0.65rem 1rem;
-        border-radius: 0.5rem;
-        cursor: pointer;
-        width: 50%;
-    }
-
-    .btn-primary {
-        color: #000;
-        border: none;
-        padding: 0.65rem 1rem;
-        border-radius: 0.5rem;
-        cursor: pointer;
-        width: 50%;
-    }
-
-    @media (max-width: 768px) {
-        .modal {
-            width: calc(100% - 2rem); 
-            max-width: 100vw;
-        }
-    } 
+}
 </style>
